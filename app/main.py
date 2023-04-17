@@ -25,7 +25,6 @@ def test_aws():
     return response['QueueUrls']
 
 
-
 @app.route('/lambda')
 def test_lambda():
     client = boto3.client('lambda')
