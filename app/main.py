@@ -18,7 +18,7 @@ def test_aws():
     sqs = boto3.resource('sqs')
     for q in sqs.queues.all():
         print(q.url)
-    print("________________")
+    print("__________________")
     sqs1 = boto3.client("sqs")
     response = sqs1.list_queues()
     print(response['QueueUrls'])
@@ -32,6 +32,13 @@ def test_lambda():
     print(response)
     return response
 
+
+@app.route('/apigateway')
+def test_apigateway():
+    client = boto3.client('apigateway')
+    response = client.get_integration()
+    print(response)
+    return response
 
 print("get some aws data")
 
