@@ -40,6 +40,7 @@ def test_apigateway():
     print(response)
     return response
 
+
 print("get some aws data")
 
 
