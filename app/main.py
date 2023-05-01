@@ -41,6 +41,14 @@ def test_apigateway():
     return response
 
 
+@app.route('/sns')
+def sns():
+    client = boot.client('sns')
+    response = client.list_topics()
+    print(response)
+    return response
+
+
 print("get some aws data")
 
 
