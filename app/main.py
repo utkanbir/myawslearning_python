@@ -43,7 +43,7 @@ def test_apigateway():
 
 @app.route('/sns')
 def sns():
-    client = boot.client('sns')
+    client = boto3.client('sns')
     response = client.list_topics()
     print(response)
     return response
